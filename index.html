@@ -69,6 +69,55 @@
                 </figure>
             </div>
         </section>
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+        
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="movie-table">
+            <h2>Movies List</h2>
+            <table id="movieTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Release Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        
+        <script>
+            const movies = [
+                { title: "Catch Me If You Can", genre: "Crime, Drama", year: 2002 },
+                { title: "The Truman Show", genre: "Drama, Sci-Fi", year: 1998 },
+                { title: "Home Alone", genre: "Comedy, Family", year: 1990 }
+            ];
+        
+            const tableBody = document.querySelector("#movieTable tbody");
+        
+            movies.forEach(movie => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${movie.title}</td>
+                    <td>${movie.genre}</td>
+                    <td>${movie.year}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        </script>
         
     </main>
 
