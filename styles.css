@@ -31,7 +31,7 @@ body {
 .tagline {
     font-size: 1.2rem;
     margin-top: 1rem;
-    color: #555;
+    color: #fff;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -86,17 +86,37 @@ body {
     background-image: url(https://i.pinimg.com/736x/46/c9/0c/46c90c9e9236cd9a99fca9b7fb6d1a80.jpg);
 }
 
-.now-showing {
-    text-align: center;
-    padding: 3rem 1rem;
+.now-showing h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    animation: fadeInScale 2s ease-out;
 }
 
-.now-showing h2 {
-    font-size: 2rem;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 1rem;
-    color: #fff;
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
+.now-showing .subtitle {
+    font-family: 'Bangers', sans-serif;
+    font-size: 1.5rem;
+    color: #ffcc00;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
 
 .movies {
     display: flex;
@@ -113,13 +133,14 @@ figure {
 
 figure img {
     width: 100%;
-    border: 3px solid #fff;
-    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
+    border: 3px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 figure img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 figcaption {
@@ -131,14 +152,31 @@ figcaption {
 }
 
 footer {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 0.5rem 1rem;
-    position: relative;
+    padding: 1rem;
+    position: fixed;
     width: 100%;
     bottom: 0;
+    animation: rotateFooter 3s ease-in-out forwards;
 }
+
+@keyframes rotateFooter {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
 .now-showing {
     text-align: center;
     padding: 3rem 1rem;
